@@ -9,7 +9,7 @@ export const shortenUrl = async (req, res) => {
     const shortUrl = nanoid(7);
     const newUrl = new Url({ longUrl, shortUrl });
     await newUrl.save();
-    res.json({ shortUrl: `http://localhost:5000/api/${shortUrl}` });
+    res.json({ shortUrl: `https://urlshortener-noa8.onrender.com/api/${shortUrl}` });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
